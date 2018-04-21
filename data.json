@@ -1,0 +1,46 @@
+{
+    "roles": {
+        "activation": "activation",
+        "content": "content",
+        "creative": "creative",
+        "martech": "martech",
+        "strategy": "strategy",
+        "technology": "technology"
+    },
+    "activation": {
+        "id1": {
+            "name": "Travis Doughty",
+            "title": "Front End Developer",
+            "linkedin": "https://www.linkedin.com/in/travis-doughty-77757051/",
+            "resume": "http://test.com",
+            "phone": "705-796-4691"
+        }
+    },
+    "content": {},
+    "creative": {},
+    "martech": {},
+    "strategy": {},
+    "technology": {
+        "id1": {
+            "name": "Travis Doughty",
+            "title": "Front End Developer",
+            "linkedin": "https://www.linkedin.com/in/travis-doughty-77757051/",
+            "resume": "http://test.com",
+            "phone": "705-796-4691"
+        },
+        "id2": {
+            "name": "Travis Doughty",
+            "title": "Front End Developer",
+            "linkedin": "https://www.linkedin.com/in/travis-doughty-77757051/",
+            "resume": "http://test.com",
+            "phone": "705-796-4691"
+        },
+        "id3": {
+            "name": "Travis Doughty",
+            "title": "Front End Developer",
+            "linkedin": "https://www.linkedin.com/in/travis-doughty-77757051/",
+            "resume": "http://test.com",
+            "phone": "705-796-4691"
+        }
+    }
+}

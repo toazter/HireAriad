@@ -1,22 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./Home";
+import PeopleCards from "./PeopleCards";
 
-// Components
-import Intro from "./Intro";
-import RoleCards from "./RoleCards";
-
-class Main extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Intro />
-                <ul>
-                    {Object.keys(this.props.roles).map((roles, key) => (
-                        <RoleCards key={key} index={key} roles={roles} />
-                    ))}
-                </ul>
-            </React.Fragment>
-        );
-    }
-}
+const Main = () => (
+    <BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/activation" component={PeopleCards} />
+            <Route path="/schedule" component={Home} />
+        </Switch>
+    </BrowserRouter>
+);
 
 export default Main;

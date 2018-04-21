@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class RoleCards extends Component {
     render() {
         return (
             <li className="RoleCards">
-                <NavLink to={this.props.roles}>{this.props.roles}</NavLink>
+                <Link to={this.props.roles}>{this.props.roles}</Link>
             </li>
         );
     }
