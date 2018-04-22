@@ -12,27 +12,32 @@ class Nav extends Component {
         const NavUl = styled.ul`
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
         `;
 
         const NavLi = styled.li`
             list-style-type: none;
             display: inline-block;
-            &:first-child {
-                a {
-                    margin-left: 0;
-                }
-            }
+            flex-grow: 1;
+            text-align: center;
         `;
 
         const StyledLink = styled(NavLink)`
             font-family: "Open Sans", sans-serif;
-            font-size: 16px;
+            font-size: 12px;
             color: #fff;
-            margin: 20px;
+            margin: 10px;
             display: inline-block;
             text-decoration: none;
             text-transform: uppercase;
+            transition: color 0.25s ease-in;
             &.active {
+                color: #fa4c00;
+            }
+            &:hover {
                 color: #fa4c00;
             }
         `;

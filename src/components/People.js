@@ -29,7 +29,7 @@ class People extends Component {
                                 title={this.props.people[item].title}
                                 linkedin={this.props.people[item].linkedin}
                                 portfolio={this.props.people[item].portfolio}
-                                needjob={this.props.people[item].needjob}
+                                needjob={this.props.people[item].needJob}
                             />
                         ))}
                     </People>

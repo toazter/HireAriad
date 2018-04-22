@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import base from "./base";
+import TransitionGroup from "react-transition-group/TransitionGroup";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
@@ -9,26 +10,41 @@ import Home from "./components/Home";
 import People from "./components/People";
 import Footer from "./components/Footer";
 
+const firstChild = props => {
+    const childrenArray = React.Children.toArray(props.children);
+    return childrenArray[0] || null;
+};
+
 class App extends Component {
     state = {
         roles: {},
-        activation: {},
+        leadership: {},
+        accounts: {},
         content: {},
         creative: {},
         martech: {},
         strategy: {},
-        technology: {}
+        technology: {},
+        finance: {}
     };
 
     componentDidMount() {
         this.ref = base.syncState("roles", {
             context: this,
-            state: "roles"
+            state: "roles",
+            queries: {
+                orderByChild: "id"
+            }
         });
 
-        this.ref = base.syncState("activation", {
+        this.ref = base.syncState("leadership", {
             context: this,
-            state: "activation"
+            state: "leadership"
+        });
+
+        this.ref = base.syncState("accounts", {
+            context: this,
+            state: "accounts"
         });
 
         this.ref = base.syncState("content", {
@@ -55,6 +71,11 @@ class App extends Component {
             context: this,
             state: "technology"
         });
+
+        this.ref = base.syncState("finance", {
+            context: this,
+            state: "finance"
+        });
     }
 
     render() {
@@ -70,10 +91,19 @@ class App extends Component {
                                 render={() => <Home roles={this.state.roles} />}
                             />
                             <Route
-                                path="/activation"
+                                path="/leadership"
                                 render={() => (
                                     <People
-                                        people={this.state.activation}
+                                        people={this.state.leadership}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/accounts"
+                                render={() => (
+                                    <People
+                                        people={this.state.accounts}
                                         roles={this.state.roles}
                                     />
                                 )}
@@ -119,6 +149,15 @@ class App extends Component {
                                 render={() => (
                                     <People
                                         people={this.state.technology}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/finance"
+                                render={() => (
+                                    <People
+                                        people={this.state.finance}
                                         roles={this.state.roles}
                                     />
                                 )}

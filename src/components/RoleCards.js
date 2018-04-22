@@ -11,18 +11,20 @@ class RoleCards extends Component {
             text-align: center;
             background: #fa4c00;
             transition: background 0.15s ease-in;
-            flex-grow: 1;
-            flex-basis: calc(32% - 10px);
-            margin: 10px;
+            flex-basis: 25%;
+            border: 10px solid #f5f5f5;
             @media ${Device.sm} {
                 flex-basis: 100%;
+            }
+            @media ${Device.md} {
+                flex-basis: 33%;
             }
             &:hover {
                 background: #000;
             }
             a {
                 font-family: "Montserrat", sans-serif;
-                font-size: 24px;
+                font-size: 18px;
                 color: #fff;
                 text-transform: uppercase;
                 text-decoration: none;

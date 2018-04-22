@@ -6,15 +6,21 @@ class PeopleCards extends Component {
     render() {
         const Img = styled.img`
             max-width: 100%;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
         `;
         const Card = styled.div`
-            flex-grow: 1;
-            flex-basis: calc(32% - 10px);
-            margin: 10px;
+            max-width: 33%;
+            flex-basis: 33%;
+            border: 10px solid #f5f5f5;
             padding: 20px;
             background: #fff;
             @media ${Device.sm} {
                 flex-basis: 100%;
+            }
+            @media ${Device.md} {
+                max-width: 33%;
+                flex-basis: 33%;
             }
         `;
         const Name = styled.h3`
@@ -43,20 +49,22 @@ class PeopleCards extends Component {
             display: block;
             text-decoration: none;
             border-radius: 4px;
+            transition: background 0.25s ease-in;
+            &:hover {
+                background: #000;
+            }
         `;
-        const Portfolio = styled.a``;
 
         const { img, name, title, linkedin, portfolio, needjob } = this.props;
 
         return (
-            <Card className={`${!needjob ? "" : "employed"}`}>
-                <Img src={img} />
+            <Card className={`${needjob ? "unemployed" : "employed"}`}>
+                <Img src={img} alt={`This is a photograph of ${name}.`} />
                 <Name>{name}</Name>
                 <Title>{title}</Title>
                 <LinkedIn href={linkedin} target="_blank">
                     Visit LinkedIn
                 </LinkedIn>
-                <Portfolio />
             </Card>
         );
     }
