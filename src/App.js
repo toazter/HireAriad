@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import base from "./base";
 
 // Components
+import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import People from "./components/People";
@@ -60,49 +61,69 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <BrowserRouter>
-                    <Switch>
-                        <Route
-                            exact
-                            path="/"
-                            render={() => <Home roles={this.state.roles} />}
-                        />
-                        <Route
-                            path="/activation"
-                            render={() => (
-                                <People people={this.state.activation} />
-                            )}
-                        />
-                        <Route
-                            path="/content"
-                            render={() => (
-                                <People people={this.state.content} />
-                            )}
-                        />
-                        <Route
-                            path="/creative"
-                            render={() => (
-                                <People people={this.state.creative} />
-                            )}
-                        />
-                        <Route
-                            path="/martech"
-                            render={() => (
-                                <People people={this.state.martech} />
-                            )}
-                        />
-                        <Route
-                            path="/strategy"
-                            render={() => (
-                                <People people={this.state.strategy} />
-                            )}
-                        />
-                        <Route
-                            path="/technology"
-                            render={() => (
-                                <People people={this.state.technology} />
-                            )}
-                        />
-                    </Switch>
+                    <ScrollToTop>
+                        <Switch>
+                            <Route
+                                exact
+                                path="/"
+                                render={() => <Home roles={this.state.roles} />}
+                            />
+                            <Route
+                                path="/activation"
+                                render={() => (
+                                    <People
+                                        people={this.state.activation}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/content"
+                                render={() => (
+                                    <People
+                                        people={this.state.content}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/creative"
+                                render={() => (
+                                    <People
+                                        people={this.state.creative}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/martech"
+                                render={() => (
+                                    <People
+                                        people={this.state.martech}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/strategy"
+                                render={() => (
+                                    <People
+                                        people={this.state.strategy}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/technology"
+                                render={() => (
+                                    <People
+                                        people={this.state.technology}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                        </Switch>
+                    </ScrollToTop>
                 </BrowserRouter>
             </div>
         );

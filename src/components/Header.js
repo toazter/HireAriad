@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Container, Device } from "./GlobalStyles";
 
 class Header extends Component {
     render() {
         const HeaderWrapper = styled.div`
             background: url("../images/hero-background.jpg") no-repeat;
             background-size: cover;
-        `;
-
-        const Container = styled.div`
-            max-width: 1200px;
-            padding: 150px 30px;
-            margin: 0 auto;
+            padding: 80px 0;
+            @media ${Device.sm} {
+                padding: 50px 0;
+            }
         `;
 
         const Divider = styled.div`
@@ -28,14 +27,21 @@ class Header extends Component {
             margin: 0;
             font-style: italic;
             font-weight: 300;
+            @media ${Device.sm} {
+                font-size: 20px;
+            }
         `;
 
         const SubTitle = styled.h2`
-            font-family: "Open Sans", sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 45px;
             color: #fff;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
+            @media ${Device.sm} {
+                font-size: 30px;
+            }
         `;
 
         return (

@@ -1,21 +1,38 @@
 import React, { Component } from "react";
+import { Container } from "./GlobalStyles";
 import PeopleCards from "./PeopleCards";
+import styled from "styled-components";
+import Nav from "./Nav";
 
 class People extends Component {
     render() {
+        const People = styled.div`
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 0 40px 0;
+            padding: 0;
+            margin: 0 -10px 40px;
+        `;
         return (
-            <React.Fragment>
-                {Object.keys(this.props.people).map((person, key) => (
-                    <PeopleCards
-                        key={key}
-                        name={this.props.people[person].name}
-                        title={this.props.people[person].title}
-                        phone={this.props.people[person].phone}
-                        linkedin={this.props.people[person].linkedin}
-                        resume={this.props.people[person].resume}
-                    />
-                ))}
-            </React.Fragment>
+            <div>
+                <Nav roles={this.props.roles} />
+                <Container>
+                    <People>
+                        {Object.keys(this.props.people).map((item, key) => (
+                            <PeopleCards
+                                key={key}
+                                img={this.props.people[item].image}
+                                name={this.props.people[item].name}
+                                title={this.props.people[item].title}
+                                linkedin={this.props.people[item].linkedin}
+                                portfolio={this.props.people[item].portfolio}
+                                needjob={this.props.people[item].needjob}
+                            />
+                        ))}
+                    </People>
+                </Container>
+            </div>
         );
     }
 }
