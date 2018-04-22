@@ -8,7 +8,6 @@ class Nav extends Component {
         const NavBar = styled.div`
             background: #000;
         `;
-
         const NavUl = styled.ul`
             margin: 0;
             padding: 0;
@@ -17,14 +16,12 @@ class Nav extends Component {
             justify-content: center;
             padding: 10px 0;
         `;
-
         const NavLi = styled.li`
             list-style-type: none;
             display: inline-block;
             flex-grow: 1;
             text-align: center;
         `;
-
         const StyledLink = styled(NavLink)`
             font-family: "Open Sans", sans-serif;
             font-size: 12px;

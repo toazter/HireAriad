@@ -55,7 +55,7 @@ class PeopleCards extends Component {
             }
         `;
 
-        const { img, name, title, linkedin, portfolio, needjob } = this.props;
+        const { img, name, title, linkedin, needjob } = this.props;
 
         return (
             <Card className={`${needjob ? "unemployed" : "employed"}`}>

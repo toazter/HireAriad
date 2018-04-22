@@ -11,7 +11,9 @@ const Title = props => {
         margin: 65px 0 50px;
         text-align: center;
     `;
+
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
+
     return (
         <Container>
             <Title>Meet the {props.roles[`${path}`]} team</Title>

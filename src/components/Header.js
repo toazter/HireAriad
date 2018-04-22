@@ -12,14 +12,12 @@ class Header extends Component {
                 padding: 50px 0;
             }
         `;
-
         const Divider = styled.div`
             width: 100px;
             height: 2px;
             background: #fa4c00;
             margin: 20px 0 30px;
         `;
-
         const Title = styled.h1`
             font-family: "Times New Roman", sans-serif;
             font-size: 30px;
@@ -31,7 +29,6 @@ class Header extends Component {
                 font-size: 20px;
             }
         `;
-
         const SubTitle = styled.h2`
             font-family: "Montserrat", sans-serif;
             font-size: 45px;
@@ -43,7 +40,6 @@ class Header extends Component {
                 font-size: 30px;
             }
         `;
-
         return (
             <HeaderWrapper>
                 <Container>

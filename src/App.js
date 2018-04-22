@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import base from "./base";
-import TransitionGroup from "react-transition-group/TransitionGroup";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
@@ -9,11 +8,6 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import People from "./components/People";
 import Footer from "./components/Footer";
-
-const firstChild = props => {
-    const childrenArray = React.Children.toArray(props.children);
-    return childrenArray[0] || null;
-};
 
 class App extends Component {
     state = {

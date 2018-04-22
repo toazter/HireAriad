@@ -15,6 +15,7 @@ class People extends Component {
             padding: 0;
             margin: 0 -10px 40px;
         `;
+
         return (
             <div>
                 <Nav roles={this.props.roles} />
@@ -28,7 +29,6 @@ class People extends Component {
                                 name={this.props.people[item].name}
                                 title={this.props.people[item].title}
                                 linkedin={this.props.people[item].linkedin}
-                                portfolio={this.props.people[item].portfolio}
                                 needjob={this.props.people[item].needJob}
                             />
                         ))}
