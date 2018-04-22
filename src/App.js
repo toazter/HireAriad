@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import People from "./components/People";
+import Footer from "./components/Footer";
 
 class App extends Component {
     state = {
@@ -125,6 +126,7 @@ class App extends Component {
                         </Switch>
                     </ScrollToTop>
                 </BrowserRouter>
+                <Footer />
             </div>
         );
     }

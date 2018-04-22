@@ -3,6 +3,7 @@ import { Container } from "./GlobalStyles";
 import PeopleCards from "./PeopleCards";
 import styled from "styled-components";
 import Nav from "./Nav";
+import Title from "./Title";
 
 class People extends Component {
     render() {
@@ -17,6 +18,7 @@ class People extends Component {
         return (
             <div>
                 <Nav roles={this.props.roles} />
+                <Title roles={this.props.roles} />
                 <Container>
                     <People>
                         {Object.keys(this.props.people).map((item, key) => (

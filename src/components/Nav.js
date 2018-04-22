@@ -17,10 +17,24 @@ class Nav extends Component {
         const NavLi = styled.li`
             list-style-type: none;
             display: inline-block;
+            &:first-child {
+                a {
+                    margin-left: 0;
+                }
+            }
         `;
 
         const StyledLink = styled(NavLink)`
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
             color: #fff;
+            margin: 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            &.active {
+                color: #fa4c00;
+            }
         `;
 
         return (
@@ -28,23 +42,19 @@ class Nav extends Component {
                 <Container>
                     <NavUl>
                         <NavLi>
-                            <NavLink
-                                to="/"
-                                className="StyledLink"
-                                activeClassName="active"
-                            >
+                            <StyledLink activeClassName="" to="/">
                                 Home
-                            </NavLink>
+                            </StyledLink>
                         </NavLi>
                         {Object.keys(this.props.roles).map((roles, key) => (
                             <NavLi key={key}>
-                                <NavLink
+                                <StyledLink
                                     key={key}
-                                    to={roles}
+                                    to={`/${roles}`}
                                     activeClassName="active"
                                 >
                                     {roles}
-                                </NavLink>
+                                </StyledLink>
                             </NavLi>
                         ))}
                     </NavUl>

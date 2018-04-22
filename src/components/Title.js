@@ -1,23 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { Container } from "./GlobalStyles";
 
-const Title = () => {
-    const TitleText = styled.div`
-        max-width: 1200px;
-        padding: 0 30px;
-        margin: 40px auto;
-        p {
-            font-family: "Open Sans", sans-serif;
-            font-size: 16px;
-            line-height: 32px;
-            color: #333;
-        }
+const Title = props => {
+    const Title = styled.h1`
+        font-family: "Montserrat", sans-serif;
+        font-size: 34px;
+        color: #333;
+        text-transform: uppercase;
+        margin: 65px 0 50px;
+        text-align: center;
     `;
-
+    const path = window.location.pathname.replace(/^\/|\/$/g, "");
     return (
-        <TitleText>
-            <h1>{this.props.title}</h1>
-        </TitleText>
+        <Container>
+            <Title>Meet the {props.roles[`${path}`]} team</Title>
+        </Container>
     );
 };
 
