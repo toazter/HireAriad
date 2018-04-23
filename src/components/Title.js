@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "./GlobalStyles";
+import { Container, Device } from "./GlobalStyles";
 
 const Title = props => {
     const Title = styled.h1`
@@ -10,6 +10,10 @@ const Title = props => {
         text-transform: uppercase;
         margin: 65px 0 50px;
         text-align: center;
+        @media ${Device.sm} {
+            font-size: 28px;
+            margin: 40px 0 30px;
+        }
     `;
 
     const path = window.location.pathname.replace(/^\/|\/$/g, "");

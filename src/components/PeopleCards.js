@@ -7,7 +7,7 @@ class PeopleCards extends Component {
     handleClick() {
         ReactGA.event({
             category: "Navigation",
-            action: "Clicked LinkedIn Profile"
+            action: `Clicked ${this.props.name}'s LinkedIn Profile`
         });
     }
 
