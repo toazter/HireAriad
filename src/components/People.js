@@ -31,6 +31,7 @@ class People extends Component {
                                 title={this.props.people[item].title}
                                 linkedin={this.props.people[item].linkedin}
                                 needjob={this.props.people[item].needJob}
+                                contract={this.props.people[item].contract}
                             />
                         ))}
                     </People>
