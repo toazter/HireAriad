@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Device } from "./GlobalStyles";
+import ReactGA from "react-ga";
 
 class PeopleCards extends Component {
+    handleClick() {
+        ReactGA.event({
+            category: "Navigation",
+            action: "Clicked LinkedIn Profile"
+        });
+    }
+
     render() {
         const Img = styled.img`
             max-width: 100%;
@@ -15,12 +23,13 @@ class PeopleCards extends Component {
             border: 10px solid #f5f5f5;
             padding: 20px;
             background: #fff;
-            @media ${Device.sm} {
-                flex-basis: 100%;
-            }
             @media ${Device.md} {
                 max-width: 33%;
                 flex-basis: 33%;
+            }
+            @media ${Device.sm} {
+                max-width: 100%;
+                flex-basis: 100%;
             }
         `;
         const Name = styled.h3`
@@ -62,7 +71,13 @@ class PeopleCards extends Component {
                 <Img src={img} alt={`This is a photograph of ${name}.`} />
                 <Name>{name}</Name>
                 <Title>{title}</Title>
-                <LinkedIn href={linkedin} target="_blank">
+                <LinkedIn
+                    href={linkedin}
+                    target="_blank"
+                    onClick={() => {
+                        this.handleClick();
+                    }}
+                >
                     Visit LinkedIn
                 </LinkedIn>
             </Card>

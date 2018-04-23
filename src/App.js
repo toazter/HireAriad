@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import base from "./base";
+import ReactGA from "react-ga";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
@@ -8,6 +9,12 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import People from "./components/People";
 import Footer from "./components/Footer";
+
+ReactGA.initialize("UA-65581388-2");
+
+function fireTracking() {
+    ReactGA.pageview(window.location.hash);
+}
 
 class App extends Component {
     state = {
@@ -76,7 +83,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <BrowserRouter>
+                <BrowserRouter onUpdate={fireTracking}>
                     <ScrollToTop>
                         <Switch>
                             <Route

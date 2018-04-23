@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Container } from "./GlobalStyles";
 import styled from "styled-components";
+import ReactGA from "react-ga";
 
 class Nav extends Component {
+    handleClick() {
+        ReactGA.event({
+            category: "Navigation",
+            action: "Clicked Link"
+        });
+    }
+
     render() {
         const NavBar = styled.div`
             background: #000;
@@ -44,7 +52,13 @@ class Nav extends Component {
                 <Container>
                     <NavUl>
                         <NavLi>
-                            <StyledLink activeClassName="" to="/">
+                            <StyledLink
+                                activeClassName=""
+                                to="/"
+                                onClick={() => {
+                                    this.handleClick();
+                                }}
+                            >
                                 Home
                             </StyledLink>
                         </NavLi>
@@ -54,6 +68,9 @@ class Nav extends Component {
                                     key={key}
                                     to={`/${roles}`}
                                     activeClassName="active"
+                                    onClick={() => {
+                                        this.handleClick();
+                                    }}
                                 >
                                     {roles}
                                 </StyledLink>
