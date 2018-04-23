@@ -33,10 +33,7 @@ class App extends Component {
     componentDidMount() {
         this.ref = base.syncState("roles", {
             context: this,
-            state: "roles",
-            queries: {
-                orderByChild: "id"
-            }
+            state: "roles"
         });
 
         this.ref = base.syncState("leadership", {
