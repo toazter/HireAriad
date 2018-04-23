@@ -64,10 +64,16 @@ class PeopleCards extends Component {
             }
         `;
 
-        const { img, name, title, linkedin, needjob } = this.props;
+        const { img, name, title, linkedin, needjob, contract } = this.props;
 
         return (
-            <Card className={`${needjob ? "unemployed" : "employed"}`}>
+            <Card
+                className={
+                    `${!needjob ? "employed" : ""}` +
+                    " " +
+                    `${contract ? "on-contract" : ""}`
+                }
+            >
                 <Img src={img} alt={`This is a photograph of ${name}.`} />
                 <Name>{name}</Name>
                 <Title>{title}</Title>
