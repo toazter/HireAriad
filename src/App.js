@@ -26,7 +26,8 @@ class App extends Component {
         martech: {},
         strategy: {},
         technology: {},
-        finance: {}
+        finance: {},
+        project: {}
     };
 
     componentDidMount() {
@@ -76,6 +77,11 @@ class App extends Component {
         this.ref = base.syncState("finance", {
             context: this,
             state: "finance"
+        });
+
+        this.ref = base.syncState("project", {
+            context: this,
+            state: "project"
         });
     }
 
@@ -159,6 +165,15 @@ class App extends Component {
                                 render={() => (
                                     <People
                                         people={this.state.finance}
+                                        roles={this.state.roles}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/project"
+                                render={() => (
+                                    <People
+                                        people={this.state.project}
                                         roles={this.state.roles}
                                     />
                                 )}
