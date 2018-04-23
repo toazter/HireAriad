@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 const size = {
     xs: "425px",
-    sm: "768px",
+    sm: "767px",
     md: "1024px",
     lg: "1440px"
 };
