@@ -4,6 +4,7 @@ import PeopleCards from "./PeopleCards";
 import styled from "styled-components";
 import Nav from "./Nav";
 import Title from "./Title";
+import ButtonScrollTop from "./ButtonScrollTop";
 
 class People extends Component {
     render() {
@@ -34,6 +35,7 @@ class People extends Component {
                         ))}
                     </People>
                 </Container>
+                <ButtonScrollTop />
             </div>
         );
     }
