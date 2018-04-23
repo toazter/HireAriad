@@ -15,9 +15,8 @@ body {
 }
 
 .employed {
+    background: #cacaca !important;
     position: relative;
-    background: #ff9900 !important;
-    filter: grayscale(100%);
 }
 
 .employed::before {
@@ -33,4 +32,12 @@ body {
     display: block;
     padding: 10px;
     text-align: center;
+}
+
+.employed a {
+    background: #000;
+}
+
+.employed a:hover {
+    background: #fa4c00;
 }
