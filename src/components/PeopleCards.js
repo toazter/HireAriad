@@ -13,7 +13,7 @@ class PeopleCards extends Component {
 
     render() {
         const Img = styled.img`
-            max-width: 100%;
+            width: 100%;
             border: 2px solid rgba(0, 0, 0, 0.1);
             border-radius: 4px;
         `;
