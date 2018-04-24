@@ -19,8 +19,9 @@ const Intro = () => {
     return (
         <Container>
             <IntroText>
-                On Tuesday, April 17, Ariad Communications declared bankruptcy,
-                suddenly shutting its doors after nearly 30 years of service.
+                On Tuesday, April 17, Ariad Communications was forced into
+                bankruptcy by U.S. private equity firm High Road Capital
+                Partners, shutting its doors after nearly 30 years of service.
                 Over 70 passionate, award-winning marketing professionals were
                 kicked to the curb, robbed of outstanding wages, packages and,
                 even worse, a direct explanation from their CEO.
