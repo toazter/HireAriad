@@ -36,49 +36,85 @@ class App extends Component {
             state: "roles"
         });
 
-        this.ref = base.syncState("leadership", {
+        this.ref = base.bindToState("leadership", {
             context: this,
-            state: "leadership"
+            state: "leadership",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("accounts", {
+        this.ref = base.bindToState("accounts", {
             context: this,
-            state: "accounts"
+            state: "accounts",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("content", {
+        this.ref = base.bindToState("content", {
             context: this,
-            state: "content"
+            state: "content",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("creative", {
+        this.ref = base.bindToState("creative", {
             context: this,
-            state: "creative"
+            state: "creative",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("martech", {
+        this.ref = base.bindToState("martech", {
             context: this,
-            state: "martech"
+            state: "martech",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("strategy", {
+        this.ref = base.bindToState("strategy", {
             context: this,
-            state: "strategy"
+            state: "strategy",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("technology", {
+        this.ref = base.bindToState("technology", {
             context: this,
-            state: "technology"
+            state: "technology",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("finance", {
+        this.ref = base.bindToState("finance", {
             context: this,
-            state: "finance"
+            state: "finance",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
 
-        this.ref = base.syncState("project", {
+        this.ref = base.bindToState("project", {
             context: this,
-            state: "project"
+            state: "project",
+            asArray: true,
+            queries: {
+                orderByChild: "needJob"
+            }
         });
     }
 

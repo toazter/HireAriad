@@ -23,17 +23,19 @@ class People extends Component {
                 <Title roles={this.props.roles} />
                 <Container>
                     <People>
-                        {Object.keys(this.props.people).map((item, key) => (
-                            <PeopleCards
-                                key={key}
-                                img={this.props.people[item].image}
-                                name={this.props.people[item].name}
-                                title={this.props.people[item].title}
-                                linkedin={this.props.people[item].linkedin}
-                                needjob={this.props.people[item].needJob}
-                                contract={this.props.people[item].contract}
-                            />
-                        ))}
+                        {Object.keys(this.props.people)
+                            .reverse()
+                            .map((item, key) => (
+                                <PeopleCards
+                                    key={key}
+                                    img={this.props.people[item].image}
+                                    name={this.props.people[item].name}
+                                    title={this.props.people[item].title}
+                                    linkedin={this.props.people[item].linkedin}
+                                    needjob={this.props.people[item].needJob}
+                                    contract={this.props.people[item].contract}
+                                />
+                            ))}
                     </People>
                 </Container>
                 <ButtonScrollTop />
